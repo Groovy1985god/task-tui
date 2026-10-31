@@ -10,8 +10,22 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "express": "^5.3.0",
-    "ink": "^8.0.0",
-    "react": "^19.3.1"
+    "drizzle-orm": "^0.44.7",
+    "express": "^5.2.1",
+    "ink": "6.0.1",
+    "ink-text-input": "^6.0.0",
+    "pg": "^8.16.3",
+    "react": "19.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^22.15.0",
+    "@types/pg": "^8.15.0",
+    "@types/react": "^19.0.0",
+    "drizzle-kit": "^0.31.4",
+    "ink-testing-library": "^4.0.0",
+    "prettier": "^3.5.3",
+    "tsx": "^4.20.0",
+    "typescript": "^5.8.3"
   }
 }
