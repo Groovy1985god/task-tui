@@ -227,7 +227,7 @@ type AuthResponse = Response<
     async (request, response: AuthResponse) => {
         const taskId = validate.uuid(request.params.taskId, 'Task ID');
         const body = validate.object(request.body);
-        await store.deleteTask(
+        await store.deletetask(
             response.locals.projectId,
             taskId,
             validate.version(body.version),
