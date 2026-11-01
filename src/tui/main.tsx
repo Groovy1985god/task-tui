@@ -2,7 +2,7 @@ import { render } from 'ink';
 import '../config.ts';
 import { createClient } from '../client/api.ts';
 import { App } from './App.tsx';
-
+// for running action again
 if (!process.stdin.isTTY || !process.stdout.isTTY) {
   console.error('Task-TUI needs an interactive terminal. ');
 } else {
