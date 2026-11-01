@@ -15,3 +15,5 @@ TUI is initiutive written in Ink and react. Server is written using Node.js and 
 3. Members can join any project using the join code and can start collabarating right away.
 
 Caveat: Auth session is not persistent for now, so everytime you open the TUI, it will need to be re logged in. I will add persistence in future.
+
+Head over to the Releases to test it out on your platform and it will auto connect to a server that I hosted in render
