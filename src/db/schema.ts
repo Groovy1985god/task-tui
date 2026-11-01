@@ -10,7 +10,7 @@ import {
   uuid,
   varchar,
 } from 'drizzle-orm/pg-core';
-import { inviteCode } from '../shared/validation';
+import { inviteCode } from '../shared/validation.ts';
 
 export const taskStatus = pgEnum('task_status', [
   'todo',
