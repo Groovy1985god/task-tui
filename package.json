@@ -13,7 +13,10 @@
     "server": "node --watch --import tsx src/server/main.ts",
     "dev": "node --import tsx src/tui/main.tsx",
     "db:generate": "drizzle-kit generate",
-    "db:migrate": "node --import tsx src/db/migrate.ts"
+    "db:migrate": "node --import tsx src/db/migrate.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/tui/main.js",
+    "server:start": "node dist/server/main.js"
   },
   "dependencies": {
     "drizzle-orm": "^0.44.7",
