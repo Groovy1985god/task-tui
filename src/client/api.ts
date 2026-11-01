@@ -17,7 +17,7 @@
     logout(): Promise<void>;
     projects(): Promise<Project[]>;
     createProject(name: string): Promise<Project>;
-    joinProject(projectId: string, input: TaskInput): Promise<Project>;
+    joinProject(inviteCode: string): Promise<Project>;
     projectData(projectId: string): Promise<ProjectData>;
     createTask(projectId: string, input: TaskInput): Promise<Task>;
     updateTask(task: Task, input: TaskInput): Promise<Task>;
