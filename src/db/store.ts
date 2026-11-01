@@ -1,8 +1,7 @@
 import { randomBytes } from 'node:crypto';
 import { and, asc, desc, eq, gt, sql } from 'drizzle-orm';
 import { AppError } from '../shared/errors.ts';
-import type { TaskInput } from '../shared/types';
-import type { Store } from '../server/store';
+import type { Store } from '../server/store.ts';
 import type { Database } from './client.ts';
 import { projectMembers, projects, sessions, tasks, users } from './schema.ts';
 
@@ -145,7 +144,7 @@ export function createStore(db: Database): Store {
       return db
         .select({ id: users.id, username: users.username })
         .from(projectMembers)
-        .innerJoin(users, eq(users.id, projectMembers))
+        .innerJoin(users, eq(users.id, projectMembers.userId))
         .where(eq(projectMembers.projectId, projectId))
         .orderBy(asc(users.username));
     },

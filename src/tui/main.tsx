@@ -1,7 +1,7 @@
 import { render } from 'ink';
-import '../config';
-import { createClient } from '../client/api';
-import { App } from './App';
+import '../config.ts';
+import { createClient } from '../client/api.ts';
+import { App } from './App.tsx';
 
 if (!process.stdin.isTTY || !process.stdout.isTTY) {
   console.error('Task-TUI needs an interactive terminal. ');
@@ -9,7 +9,7 @@ if (!process.stdin.isTTY || !process.stdout.isTTY) {
   try {
     const api = createClient(process.env.API_URL ?? 'http://127.0.0.1:3000');
     const instance = render(<App api={api} />);
-    await instance.waitUntilExit();
+    instance.waitUntilExit();
     instance.cleanup();
   } catch (e) {
     console.log('Could not open Task-TUI', e instanceof Error ? e.message : e);

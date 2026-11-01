@@ -4,12 +4,16 @@
   "description": "",
   "license": "ISC",
   "author": "",
-  "type": "commonjs",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "server": "node --watch --import tsx src/server/main.ts",
+    "dev": "node --import tsx src/tui/main.tsx",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "node --import tsx src/db/migrate.ts"
   },
   "dependencies": {
     "drizzle-orm": "^0.44.7",

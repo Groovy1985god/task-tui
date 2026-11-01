@@ -121,11 +121,12 @@ export function createApi(
     const user = /^[a-f0-9]{64}$/u.test(token)
       ? await store.sessionUser(hash)
       : undefined;
-    if (!user)
+    if (!user) {
       throw new AppError(
         401,
         'Sign in to continue. Your session may have expired.',
       );
+    }
     response.locals.user = user;
     response.locals.sessionHash = hash;
     next();
@@ -181,6 +182,9 @@ export function createApi(
     next();
   });
   projectRoutes.get('/members', async (_request, response: AuthResponse) => {
+    console.log("project id: ", response.locals.projectId);
+    const data = await store.listMembers(response.locals.projectId);
+    console.log("data: ", data);
     response.json(await store.listMembers(response.locals.projectId));
   });
   projectRoutes.get('/tasks', async (_request, response: AuthResponse) => {
@@ -275,6 +279,7 @@ export function createApi(
         .status(415)
         .json({ error: 'Send uncompressed UTF-8 application/json.' });
     } else {
+      console.log("error: ", error);
       reportError(error);
       response.status(500).json({
         error: 'The server could not complete the request. Please retry.',

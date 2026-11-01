@@ -737,7 +737,7 @@ export function App({ api }: { api: ApiClient }) {
     >
       <Box justifyContent="space-between" marginBottom={1}>
         <Text bold color={theme.accent}>
-          taskink
+          Task-TUI
           <Text color={undefined}> / {user ? 'workspace' : 'welcome'}</Text>
         </Text>
         {user ? <Text dimColor>@{user.username}</Text> : null}

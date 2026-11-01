@@ -48,7 +48,7 @@ export function createClient(baseUrl: string): ApiClient {
         method,
         headers: {
           ...(body === undefined ? {} : { 'content-type': 'application/json' }),
-          ...(token ? { authorization: 'Bearer ${token}' } : {}),
+          ...(token ? { authorization: `Bearer ${token}` } : {}),
         },
         ...(body === undefined ? {} : { body: JSON.stringify(body) }),
         signal: AbortSignal.timeout(10_000),
